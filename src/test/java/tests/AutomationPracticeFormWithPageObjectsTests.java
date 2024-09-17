@@ -9,20 +9,17 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
 
     @Test
     void successfulRegistrationWithFullDataTest() {
-        String firstName = "Anna";
-        String lastName = "Karenina";
-        String userEmail = "anna@karenina.com";
-        String gender = "Female";
-        String phoneNumber = "9031112233";
-        String dayOfBirth = "31";
-        String monthOfBirth = "July";
-        String yearOfBirth = "1991";
         String[] subjects = new String[] {"Maths", "Computer Science"};
         String[] hobbies = new String[] {"Reading", "Music"};
-        String picName = "ava.png";
-        String currentAddress = "Moscow, Russia";
-        String state = "Haryana";
-        String city = "Panipat";
+        String  firstName = "Anna",
+                lastName = "Karenina",
+                userEmail = "anna@karenina.com",
+                gender = "Female",
+                phoneNumber = "9031112233",
+                dayOfBirth = "31", monthOfBirth = "July", yearOfBirth = "1991",
+                picName = "ava.png",
+                currentAddress = "Moscow, Russia",
+                state = "Haryana", city = "Panipat";
 
         registrationPage.openPage()
                 .setFirstName(firstName)
