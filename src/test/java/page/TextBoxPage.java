@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxPage {
 
-    private SelenideElement
+    private final SelenideElement
             fullNameInput = $("#userName"),
             userEmailInput = $("#userEmail"),
             addressCurrentInput = $("#currentAddress"),

@@ -5,6 +5,8 @@ import page.RegistrationPage;
 
 public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
 
+    private static final RegistrationPage registrationPage = new RegistrationPage();
+
     @Test
     void successfulRegistrationWithFullDataTest() {
         String firstName = "Anna";
@@ -12,7 +14,9 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
         String userEmail = "anna@karenina.com";
         String gender = "Female";
         String phoneNumber = "9031112233";
-        String[] dateOfBirth  = new String[] {"31", "July", "1991"};
+        String dayOfBirth = "31";
+        String monthOfBirth = "July";
+        String yearOfBirth = "1991";
         String[] subjects = new String[] {"Maths", "Computer Science"};
         String[] hobbies = new String[] {"Reading", "Music"};
         String picName = "ava.png";
@@ -20,14 +24,13 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
         String state = "Haryana";
         String city = "Panipat";
 
-        RegistrationPage registrationPage = new RegistrationPage();
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
                 .setGender(gender)
                 .setUserNumber(phoneNumber)
-                .setDateOfBirth(dateOfBirth)
+                .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubjects(subjects)
                 .setHobbies(hobbies)
                 .setPicture(picName)
@@ -41,7 +44,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
                 .checkResult("Student Email", userEmail)
                 .checkResult("Gender", gender)
                 .checkResult("Mobile", phoneNumber)
-                .checkResult("Date of Birth",dateOfBirth[0] + " " + dateOfBirth[1] + "," + dateOfBirth[2])
+                .checkResult("Date of Birth",dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
                 .checkResult("Subjects", subjects[0] + ", " + subjects[1])
                 .checkResult("Hobbies", hobbies[0] + ", " + hobbies[1])
                 .checkResult("Picture", picName)
@@ -56,7 +59,6 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
         String gender = "Female";
         String phoneNumber = "9031112233";
 
-        RegistrationPage registrationPage = new RegistrationPage();
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -72,7 +74,6 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
 
     @Test
     void negativeRegistrationTest() {
-        RegistrationPage registrationPage = new RegistrationPage();
         registrationPage.openPage().clickSubmit();
 
         registrationPage.negativeCheck();

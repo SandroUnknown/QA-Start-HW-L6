@@ -5,6 +5,8 @@ import page.TextBoxPage;
 
 public class TextBoxWithPageObjectsTests extends TestBase {
 
+    private static final TextBoxPage textBoxPage = new TextBoxPage();
+
     @Test
     void successfulTextBoxWithFullDataTest() {
         String userName = "Alexander Petyukov";
@@ -12,7 +14,6 @@ public class TextBoxWithPageObjectsTests extends TestBase {
         String currentAddress = "Milan, Italy";
         String permanentAddress = "Moscow, Russia";
 
-        TextBoxPage textBoxPage = new TextBoxPage();
         textBoxPage.openPage()
                 .setFullName(userName)
                 .setUserEmail(userEmail)
