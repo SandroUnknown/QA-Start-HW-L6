@@ -16,7 +16,7 @@ public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
                 userEmail = "anna@karenina.com",
                 gender = "Female",
                 phoneNumber = "9031112233",
-                dayOfBirth = "31", monthOfBirth = "July", yearOfBirth = "1991",
+                dayOfBirth = "30", monthOfBirth = "July", yearOfBirth = "1991",
                 picName = "ava.png",
                 currentAddress = "Moscow, Russia",
                 state = "Haryana", city = "Panipat";
