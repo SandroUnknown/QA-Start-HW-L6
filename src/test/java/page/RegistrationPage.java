@@ -2,7 +2,6 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 import page.components.CalendarComponent;
-import page.components.StateCityComponent;
 import page.components.TableResponsive;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -23,6 +22,7 @@ public class RegistrationPage {
             addressCurrentInput = $("#currentAddress"),
             stateInput = $("#state"),
             cityInput = $("#city"),
+            stateCityWrapper = $("#stateCity-wrapper"),
             submitInput = $("#submit");
 
     public RegistrationPage openPage() {
@@ -87,13 +87,13 @@ public class RegistrationPage {
 
     public RegistrationPage setState(String value) {
         stateInput.click();
-        new StateCityComponent().setValue(value);
+        stateCityWrapper.$(byText(value)).click();
         return this;
     }
 
     public RegistrationPage setCity(String value) {
         cityInput.click();
-        new StateCityComponent().setValue(value);
+        stateCityWrapper.$(byText(value)).click();
         return this;
     }
 

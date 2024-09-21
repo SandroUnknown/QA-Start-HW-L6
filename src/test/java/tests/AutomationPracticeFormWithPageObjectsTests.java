@@ -5,7 +5,7 @@ import page.RegistrationPage;
 
 public class AutomationPracticeFormWithPageObjectsTests extends TestBase {
 
-    private static final RegistrationPage registrationPage = new RegistrationPage();
+    private final RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void successfulRegistrationWithFullDataTest() {

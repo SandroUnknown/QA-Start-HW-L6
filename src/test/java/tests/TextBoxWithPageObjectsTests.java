@@ -5,7 +5,7 @@ import page.TextBoxPage;
 
 public class TextBoxWithPageObjectsTests extends TestBase {
 
-    private static final TextBoxPage textBoxPage = new TextBoxPage();
+    private final TextBoxPage textBoxPage = new TextBoxPage();
 
     @Test
     void successfulTextBoxWithFullDataTest() {
